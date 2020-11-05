@@ -25,6 +25,25 @@ class QuizGameController: UIViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("View will appear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("View did appear")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("View will disappear")
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("View did disappear")
+    }
+    
     @IBAction func buttonAnswerAHandler(_ sender: Any) {
         print ("Gibb")
         showWrongAnsewerAlert(button: buttonAnswerA)
