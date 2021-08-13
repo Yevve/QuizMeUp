@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class QuizGameController: UIViewController {
 
@@ -24,6 +25,7 @@ class QuizGameController: UIViewController {
     var question: Question?
     var numberOfQuestions = 0
     var numberOfCorrectAnswers = 0
+    var difficulty = "easy"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,6 +124,7 @@ class QuizGameController: UIViewController {
     private func goToNextQuestion(){
         guard questions.isEmpty == false,
               let quizGameController = storyboard?.instantiateViewController(withIdentifier: "QuizGameController") as? QuizGameController else {
+            saveGameResult()
             performSegue(withIdentifier: "ResultView", sender: nil)
             return
         }
@@ -130,9 +133,25 @@ class QuizGameController: UIViewController {
         quizGameController.questions = questions
         navigationController?.pushViewController(quizGameController, animated: true)
     }
+    private func saveGameResult(){
+        let appDelegate = UIApplication.shared.delegate as!
+            AppDelegate
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+       if let gameResult =
+            NSEntityDescription.insertNewObject(forEntityName: "GameResult", into: managedObjectContext) as? GameResult{
+            gameResult.numberOfQuestions = Int32(numberOfQuestions)
+            gameResult.rightAnswers = Int32(numberOfCorrectAnswers)
+            gameResult.date = Date()
+            appDelegate.saveContext()
+        }
+        
+        
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let resultViewController = segue.destination as? ResultViewController{
             resultViewController.resultView.resultLabel.text = "You won! You answered \(numberOfCorrectAnswers) of \(numberOfQuestions) correct"
+            resultViewController.resultView.settingsLabel.text = "You played on \(difficulty)"
+            
         }
     }
         

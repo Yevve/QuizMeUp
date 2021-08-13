@@ -17,11 +17,30 @@ class StartViewController: UIViewController {
         
         startButton.isEnabled = false
         startButton.setTitleColor(.systemRed, for: .disabled)
-        downloadQuestions(amount: 5)
+        
     }
     
-    private func downloadQuestions(amount:Int){
-        guard let url = URL(string: "https://opentdb.com/api.php?amount=\(amount)&type=multiple")
+    @IBOutlet weak var amountPicker: UITextField!
+    @IBOutlet weak var difficultyPicker: UITextField!
+        
+   
+    
+    @IBAction func selectMode(_ sender: UIButton){
+        
+        var difficulty:String = difficultyPicker.text ?? "easy"
+        var amountValue:String = amountPicker.text ?? "5"
+        var amount = Int(amountValue) ?? 5
+        downloadQuestions(amount: amount, difficulty: difficulty)
+    }
+        @IBAction func scoreButtonHandler(_ sender: Any) {
+        let scoreTableViewController = ScoreTableViewController()
+        navigationController?.pushViewController(scoreTableViewController, animated: true)
+        
+    }
+   
+    
+    private func downloadQuestions(amount:Int,difficulty:String){
+        guard let url = URL(string: "https://opentdb.com/api.php?amount=\(amount)&type=multiple&difficulty=\(difficulty)")
         else{
             return
         }
@@ -45,11 +64,8 @@ class StartViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let quizGameController = segue.destination as? QuizGameController{
-            /*let question1 = Question(category: "Bars", type:.multiple, difficulty: .easy, question: "What is your favorit bar?", correctAnswers: "Aka", incorrectAnswers: ["Kappa","Twin","Shooters"])
-            let question2 = Question(category: "Booze", type: .multiple, difficulty: .easy, question: "What is your favorit booze", correctAnswers: "Donk", incorrectAnswers: ["Cider","Wine","Beer"])
-             let questions = [question1,question2]
-             */
-            
+        
+           
             quizGameController.numberOfQuestions = questions.count
             quizGameController.questions = questions
         }

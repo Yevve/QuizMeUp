@@ -12,6 +12,9 @@
 		A011F5D626C669BC000BF78A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011F5D526C669BC000BF78A /* Question.swift */; };
 		A011F5D826C66C83000BF78A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011F5D726C66C83000BF78A /* StartViewController.swift */; };
 		A011F5DE26C6899F000BF78A /* QuestionsResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011F5DD26C6899F000BF78A /* QuestionsResults.swift */; };
+		A011F5E126C69889000BF78A /* GameResult+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011F5DF26C69889000BF78A /* GameResult+CoreDataClass.swift */; };
+		A011F5E226C69889000BF78A /* GameResult+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011F5E026C69889000BF78A /* GameResult+CoreDataProperties.swift */; };
+		A011F5E426C69E46000BF78A /* ScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011F5E326C69E46000BF78A /* ScoreTableViewController.swift */; };
 		A0FB1F0C254AA4150095E2D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB1F0B254AA4150095E2D5 /* AppDelegate.swift */; };
 		A0FB1F0E254AA4150095E2D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB1F0D254AA4150095E2D5 /* SceneDelegate.swift */; };
 		A0FB1F10254AA4150095E2D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB1F0F254AA4150095E2D5 /* ViewController.swift */; };
@@ -47,6 +50,9 @@
 		A011F5D526C669BC000BF78A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		A011F5D726C66C83000BF78A /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A011F5DD26C6899F000BF78A /* QuestionsResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsResults.swift; sourceTree = "<group>"; };
+		A011F5DF26C69889000BF78A /* GameResult+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameResult+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A011F5E026C69889000BF78A /* GameResult+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameResult+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A011F5E326C69E46000BF78A /* ScoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewController.swift; sourceTree = "<group>"; };
 		A0FB1F08254AA4150095E2D5 /* QuizMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FB1F0B254AA4150095E2D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0FB1F0D254AA4150095E2D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +119,8 @@
 		A0FB1F0A254AA4150095E2D5 /* QuizMeUp */ = {
 			isa = PBXGroup;
 			children = (
+				A011F5E026C69889000BF78A /* GameResult+CoreDataProperties.swift */,
+				A011F5DF26C69889000BF78A /* GameResult+CoreDataClass.swift */,
 				A0FB1F0B254AA4150095E2D5 /* AppDelegate.swift */,
 				A0FB1F0D254AA4150095E2D5 /* SceneDelegate.swift */,
 				A0FB1F0F254AA4150095E2D5 /* ViewController.swift */,
@@ -127,6 +135,7 @@
 				A011F5D526C669BC000BF78A /* Question.swift */,
 				A011F5D726C66C83000BF78A /* StartViewController.swift */,
 				A011F5DD26C6899F000BF78A /* QuestionsResults.swift */,
+				A011F5E326C69E46000BF78A /* ScoreTableViewController.swift */,
 			);
 			path = QuizMeUp;
 			sourceTree = "<group>";
@@ -283,7 +292,10 @@
 				A0FB1F48254AB0E60095E2D5 /* QuizGameController.swift in Sources */,
 				A011F5D626C669BC000BF78A /* Question.swift in Sources */,
 				A0FB1F10254AA4150095E2D5 /* ViewController.swift in Sources */,
+				A011F5E426C69E46000BF78A /* ScoreTableViewController.swift in Sources */,
+				A011F5E126C69889000BF78A /* GameResult+CoreDataClass.swift in Sources */,
 				A0FB1F16254AA4150095E2D5 /* QuizMeUp.xcdatamodeld in Sources */,
+				A011F5E226C69889000BF78A /* GameResult+CoreDataProperties.swift in Sources */,
 				A0FB1F0C254AA4150095E2D5 /* AppDelegate.swift in Sources */,
 				A011F5D826C66C83000BF78A /* StartViewController.swift in Sources */,
 				A0FB1F0E254AA4150095E2D5 /* SceneDelegate.swift in Sources */,

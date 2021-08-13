@@ -11,6 +11,7 @@ class ResultView: UIView {
 
     private let titleLabel = UILabel()
     let resultLabel = UILabel()
+    let settingsLabel = UILabel()
     let button = UIButton()
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,7 +40,13 @@ class ResultView: UIView {
         resultLabel.translatesAutoresizingMaskIntoConstraints = false
         resultLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
         resultLabel.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor).isActive = true
-        
+        settingsLabel.textColor = .systemYellow
+        settingsLabel.font = UIFont.preferredFont(forTextStyle: .callout)
+        settingsLabel.adjustsFontSizeToFitWidth = true
+        addSubview(settingsLabel)
+        settingsLabel.translatesAutoresizingMaskIntoConstraints = false
+        settingsLabel.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 20).isActive = true
+        settingsLabel.centerXAnchor.constraint(equalTo: resultLabel.centerXAnchor).isActive = true
         
         button.setTitleColor(.systemYellow, for: .normal)
         button.setTitle(NSLocalizedString("Reset", comment: "Reset button"), for: .normal)
