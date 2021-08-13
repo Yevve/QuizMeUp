@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="poO-kQ-0Hb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="poO-kQ-0Hb">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,7 @@
         <!--QuizMeUp-->
         <scene sceneID="PX0-AE-f6Z">
             <objects>
-                <viewController id="80R-Fp-pye" sceneMemberID="viewController">
+                <viewController id="80R-Fp-pye" customClass="StartViewController" customModule="QuizMeUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t2d-M3-nNM">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,13 +39,16 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vf5-tI-Q5o"/>
-                        <color key="backgroundColor" red="0.058823529411764705" green="0.078431372549019607" blue="0.19607843137254902" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.055540197303757755" green="0.074638037399306842" blue="0.19607843137254902" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="bbs-VA-68r" firstAttribute="centerY" secondItem="t2d-M3-nNM" secondAttribute="centerY" id="PZT-6S-0oP"/>
                             <constraint firstItem="bbs-VA-68r" firstAttribute="centerX" secondItem="t2d-M3-nNM" secondAttribute="centerX" id="eAC-nO-5IA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="QuizMeUp" id="LPb-hz-49J"/>
+                    <connections>
+                        <outlet property="startButton" destination="bbs-VA-68r" id="UDd-AV-UOf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bek-9H-vdh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +82,7 @@
         <!--Quiz Game Controller-->
         <scene sceneID="n06-nU-WDm">
             <objects>
-                <viewController id="GAJ-s6-RlR" customClass="QuizGameController" customModule="QuizMeUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuizGameController" id="GAJ-s6-RlR" customClass="QuizGameController" customModule="QuizMeUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FpA-7y-KyO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +90,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xc9-S6-MoO">
                                 <rect key="frame" x="10" y="88" width="370" height="722"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your favorit bar?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4r-XM-86H">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your favorit bar?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4r-XM-86H">
                                         <rect key="frame" x="0.0" y="0.0" width="370" height="356"/>
                                         <color key="backgroundColor" red="0.058823529411764705" green="0.078431372549019607" blue="0.15686274509803921" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -100,10 +103,10 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NZw-jf-saT">
                                                 <rect key="frame" x="0.0" y="0.0" width="370" height="81.666666666666671"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tc2-GQ-Eo1">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tc2-GQ-Eo1">
                                                         <rect key="frame" x="0.0" y="0.0" width="370" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="0.23529411764705882" green="0.22352941176470587" blue="0.23921568627450979" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <state key="normal" title="Kappa">
+                                                        <state key="normal">
                                                             <color key="titleColor" systemColor="systemYellowColor"/>
                                                         </state>
                                                         <connections>
@@ -112,20 +115,20 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Var-Rz-n6O">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Var-Rz-n6O">
                                                 <rect key="frame" x="0.0" y="91.666666666666629" width="370" height="81.333333333333314"/>
                                                 <color key="backgroundColor" red="0.23529411764705882" green="0.22352941176470587" blue="0.23921568627450979" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Twin">
+                                                <state key="normal">
                                                     <color key="titleColor" systemColor="systemYellowColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="buttonAnswerCHandler:" destination="GAJ-s6-RlR" eventType="touchUpInside" id="k8E-y2-vN7"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Xy-yA-DX9">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="2Xy-yA-DX9">
                                                 <rect key="frame" x="0.0" y="183" width="370" height="81.666666666666686"/>
                                                 <color key="backgroundColor" red="0.23529411764705882" green="0.22352941176470587" blue="0.23921568627450979" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Shooters">
+                                                <state key="normal">
                                                     <color key="titleColor" systemColor="systemYellowColor"/>
                                                 </state>
                                                 <connections>
@@ -135,10 +138,10 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KJg-Gl-1W2">
                                                 <rect key="frame" x="0.0" y="274.66666666666663" width="370" height="81.333333333333314"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Auf-Op-7kS">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Auf-Op-7kS">
                                                         <rect key="frame" x="0.0" y="0.0" width="370" height="81.333333333333329"/>
                                                         <color key="backgroundColor" red="0.23529411764705882" green="0.22352941176470587" blue="0.23921568627450979" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <state key="normal" title="Aka">
+                                                        <state key="normal">
                                                             <color key="titleColor" systemColor="systemYellowColor"/>
                                                         </state>
                                                         <connections>
@@ -169,11 +172,28 @@
                         <outlet property="buttonAnswerC" destination="Var-Rz-n6O" id="zDu-sE-Gn9"/>
                         <outlet property="buttonAnswerD" destination="Auf-Op-7kS" id="Qf4-KS-7lf"/>
                         <outlet property="questionLabel" destination="G4r-XM-86H" id="pdj-xj-CSb"/>
+                        <segue destination="bUD-vy-EwA" kind="show" identifier="ResultView" id="TaZ-Du-9dc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpU-rv-p20" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1368" y="112"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="Dtd-0J-W1u">
+            <objects>
+                <viewController id="bUD-vy-EwA" customClass="ResultViewController" customModule="QuizMeUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yo0-gK-opo">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6y6-hq-nCQ"/>
+                        <color key="backgroundColor" red="0.02376824059" green="0.037916641680000002" blue="0.1019679829" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zMK-so-hSL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ox-Nc-aWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2452" y="112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BgU-PI-BUC">
