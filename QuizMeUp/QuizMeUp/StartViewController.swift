@@ -64,8 +64,8 @@ class StartViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let quizGameController = segue.destination as? QuizGameController{
-        
-           
+            
+            
             quizGameController.numberOfQuestions = questions.count
             quizGameController.questions = questions
         }

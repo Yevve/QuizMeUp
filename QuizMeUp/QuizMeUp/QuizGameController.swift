@@ -25,7 +25,7 @@ class QuizGameController: UIViewController {
     var question: Question?
     var numberOfQuestions = 0
     var numberOfCorrectAnswers = 0
-    var difficulty = "easy"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,16 +142,19 @@ class QuizGameController: UIViewController {
             gameResult.numberOfQuestions = Int32(numberOfQuestions)
             gameResult.rightAnswers = Int32(numberOfCorrectAnswers)
             gameResult.date = Date()
+            gameResult.difficulty = String(question!.difficulty.rawValue)
             appDelegate.saveContext()
         }
         
         
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let resultViewController = segue.destination as? ResultViewController{
             resultViewController.resultView.resultLabel.text = "You won! You answered \(numberOfCorrectAnswers) of \(numberOfQuestions) correct"
-            resultViewController.resultView.settingsLabel.text = "You played on \(difficulty)"
-            
+            resultViewController.resultView.settingsLabel.text = "You played on \(question!.difficulty.rawValue)"
+            resultViewController.resultView.categoriesLabel.text = "Categories played were \(question!.category)"
+            print(question!.category)
         }
     }
         

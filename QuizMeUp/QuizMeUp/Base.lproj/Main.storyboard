@@ -8,6 +8,49 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="akg-q4-4bx">
+            <objects>
+                <viewController id="tBC-cd-Prk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5HC-8A-bsO">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2v-se-tHt">
+                                <rect key="frame" x="117" y="131" width="156" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kPD-D2-Dbq">
+                                <rect key="frame" x="26" y="175" width="338" height="613"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.02376824059" green="0.037916641680000002" blue="0.1019679829" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <string key="text">To start the game first you need to select the amount of questions and on what difficulty you want to play. 
+
+
+After you have made your choices you can press Let's Quiz button to start the game. 
+
+
+After the game is finished you can go back to main screen by pressing Reset button to choose new setting or press select again to get new questions with old settings.
+
+
+To view how well you preformed you can press Score button where you will see all your rounds and how well you preformed.</string>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EwE-UW-Yte"/>
+                        <color key="backgroundColor" red="0.02376824059" green="0.037916641680000002" blue="0.1019679829" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xwt-YG-SuB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uau-sx-M0w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447.69230769230768" y="-596.44549763033172"/>
+        </scene>
         <!--QuizMeUp-->
         <scene sceneID="PX0-AE-f6Z">
             <objects>
@@ -64,11 +107,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3g-nN-mam">
-                                <rect key="frame" x="173" y="674" width="44" height="30"/>
+                                <rect key="frame" x="164" y="677" width="63" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1333974302" green="0.12893015150000001" blue="0.16078850629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Select">
                                     <color key="titleColor" systemColor="systemYellowColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="selectMode:" destination="80R-Fp-pye" eventType="touchUpInside" id="tq1-4y-s1Y"/>
                                 </connections>
@@ -81,7 +130,13 @@
                             <constraint firstItem="bbs-VA-68r" firstAttribute="centerX" secondItem="t2d-M3-nNM" secondAttribute="centerX" id="eAC-nO-5IA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="QuizMeUp" id="LPb-hz-49J"/>
+                    <navigationItem key="navigationItem" title="QuizMeUp" id="LPb-hz-49J">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="info.circle" catalog="system" id="ixF-HP-yUe">
+                            <connections>
+                                <segue destination="tBC-cd-Prk" kind="show" id="eU4-Pk-L3t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="amountPicker" destination="nAj-Kk-FnR" id="zyb-M0-Egz"/>
                         <outlet property="difficultyPicker" destination="61P-go-QlE" id="Whm-FG-vYw"/>
@@ -103,7 +158,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xc9-S6-MoO">
                                 <rect key="frame" x="10" y="88" width="370" height="722"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your favorit bar?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4r-XM-86H">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4r-XM-86H">
                                         <rect key="frame" x="0.0" y="0.0" width="370" height="356"/>
                                         <color key="backgroundColor" red="0.058823529411764705" green="0.078431372549019607" blue="0.15686274509803921" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -226,6 +281,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -50,7 +50,7 @@ class ScoreTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreIdentifier", for: indexPath)
 
         let gameResults = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = "Out of \(gameResults.numberOfQuestions) you got \(gameResults.rightAnswers) right"
+        cell.textLabel?.text = "\(gameResults.rightAnswers) out of \(gameResults.numberOfQuestions) right on \(gameResults.difficulty) difficulty"
 
         return cell
     }

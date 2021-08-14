@@ -14,7 +14,7 @@ struct Question: Decodable {
     }
     
     enum Difficulty:String,Decodable{
-        case easy,medium,hard
+        case easy = "easy",medium = "medium",hard = "hard"
     }
     
     let category: String
